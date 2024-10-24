@@ -544,6 +544,9 @@ export default function CodeEditor({
       } else if (e.key === "l" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setIsAIChatOpen((prev) => !prev)
+      } else if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setIsAIChatOpen((prev) => !prev)
       }
     }
 

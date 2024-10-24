@@ -28,7 +28,7 @@ export async function updateSandbox(body: {
   name?: string
   visibility?: "public" | "private"
 }) {
-  await fetch(`${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox`, {
+  await fetch(`https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export async function updateSandbox(body: {
 
 export async function deleteSandbox(id: string) {
   await fetch(
-    `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox?id=${id}`,
+    `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox?id=${id}`,
     {
       method: "DELETE",
       headers: {
@@ -56,7 +56,7 @@ export async function deleteSandbox(id: string) {
 
 export async function shareSandbox(sandboxId: string, email: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox/share`,
+    `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox/share`,
     {
       method: "POST",
       headers: {
@@ -78,7 +78,7 @@ export async function shareSandbox(sandboxId: string, email: string) {
 
 export async function unshareSandbox(sandboxId: string, userId: string) {
   await fetch(
-    `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox/share`,
+    `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox/share`,
     {
       method: "DELETE",
       headers: {

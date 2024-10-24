@@ -93,7 +93,7 @@ io.use(async (socket, next) => {
   const { sandboxId, userId } = parseQuery.data
   // Fetch user data from the database
   const dbUser = await fetch(
-    `${process.env.DATABASE_WORKER_URL}/api/user?id=${userId}`,
+    `https://${process.env.DATABASE_WORKER_URL}/api/user?id=${userId}`,
     {
       headers: {
         Authorization: `${process.env.WORKERS_KEY}`,

@@ -14,7 +14,7 @@ export default async function AppAuthLayout({
   }
 
   const dbUser = await fetch(
-    `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`,
+    `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`,
     {
       headers: {
         Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
@@ -25,7 +25,7 @@ export default async function AppAuthLayout({
 
   if (!dbUserJSON.id) {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user`,
+      `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user`,
       {
         method: "POST",
         headers: {
