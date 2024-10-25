@@ -6,7 +6,7 @@ dotenv.config()
 export const RemoteFileStorage = {
   getSandboxPaths: async (id: string) => {
     const res = await fetch(
-      `https://${process.env.STORAGE_WORKER_URL}/api?sandboxId=${id}`,
+      `${process.env.STORAGE_WORKER_URL}/api?sandboxId=${id}`,
       {
         headers: {
           Authorization: `${process.env.WORKERS_KEY}`,
@@ -20,7 +20,7 @@ export const RemoteFileStorage = {
 
   getFolder: async (folderId: string) => {
     const res = await fetch(
-      `https://${process.env.STORAGE_WORKER_URL}/api?folderId=${folderId}`,
+      `${process.env.STORAGE_WORKER_URL}/api?folderId=${folderId}`,
       {
         headers: {
           Authorization: `${process.env.WORKERS_KEY}`,
@@ -35,7 +35,7 @@ export const RemoteFileStorage = {
   fetchFileContent: async (fileId: string): Promise<string> => {
     try {
       const fileRes = await fetch(
-        `https://${process.env.STORAGE_WORKER_URL}/api?fileId=${fileId}`,
+        `${process.env.STORAGE_WORKER_URL}/api?fileId=${fileId}`,
         {
           headers: {
             Authorization: `${process.env.WORKERS_KEY}`,
@@ -103,7 +103,7 @@ export const RemoteFileStorage = {
 
   getProjectSize: async (id: string) => {
     const res = await fetch(
-      `https://${process.env.STORAGE_WORKER_URL}/api/size?sandboxId=${id}`,
+      `${process.env.STORAGE_WORKER_URL}/api/size?sandboxId=${id}`,
       {
         headers: {
           Authorization: `${process.env.WORKERS_KEY}`,

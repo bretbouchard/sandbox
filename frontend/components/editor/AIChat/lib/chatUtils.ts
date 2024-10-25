@@ -99,7 +99,7 @@ export const handleSend = async (
     }))
 
     const response = await fetch(
-      `https://${process.env.NEXT_PUBLIC_AI_WORKER_URL}/api`,
+      `${process.env.NEXT_PUBLIC_AI_WORKER_URL}/api`,
       {
         method: "POST",
         headers: {

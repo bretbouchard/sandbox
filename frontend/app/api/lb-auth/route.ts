@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
   }
 
   const res = await fetch(
-    `https://${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${clerkUser.id}`,
+    `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${clerkUser.id}`,
     {
       headers: {
         Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
